@@ -35,9 +35,15 @@ binomialViaHNF := proc(network::list)
 	print(network);
 	print("The binomial coefficient matrix of the network is:");
 	print(m);
-	local H:= HermiteForm(m);
-	print("The Hermite Normal Form of the matrix is:");
+	
+	#local H:= HermiteForm(m);
+	#print("The Hermite Normal Form of the matrix is:");
+	#print(H);
+	
+	local H:= ReducedRowEchelonForm(m);
+	print("The Reduced Row Echelon Form of the matrix is:");
 	print(H);
+	
 	local numRows := RowDimension(H);
 	local numCols := ColumnDimension(H);
 
